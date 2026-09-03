@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="fa">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>درباره ما و تیم | Tak Luxe Grooming</title>
+  <meta name="description" content="آشنایی با تاریخچه، فلسفه و تیم اساتید پیرایش آرایشگاه مردانه تک لوکس گرومینگ سمنان">
+  <meta property="og:title" content="داستان تک لوکس گرومینگ | هنر و اصالت پیرایش">
+  <meta property="og:description" content="مقصدی برای آقایانی که به دنبال دقت، اصالت و لوکس بودن در فضایی آرام و مدرن هستند.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary-container": "#181100",
+            "error": "#ffb4ab",
+            "tertiary": "#e9c349",
+            "tertiary-fixed": "#ffe088",
+            "primary": "#c8c6c5",
+            "primary-container": "#121212",
+            "secondary-container": "#653d1e",
+            "secondary": "#f4bb92",
+            "surface": "#121414",
+            "surface-dim": "#121414",
+            "surface-bright": "#37393a",
+            "surface-container-low": "#1a1c1c",
+            "surface-container": "#1e2020",
+            "surface-container-high": "#282a2b",
+            "surface-container-highest": "#333535",
+            "surface-container-lowest": "#0c0f0f",
+            "on-surface": "#e2e2e2",
+            "on-surface-variant": "#c4c7c7",
+            "outline": "#8e9192",
+            "outline-variant": "#444748",
+            "background": "#121414",
+            "on-background": "#e2e2e2",
+            "on-tertiary": "#3c2f00"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "margin-desktop": "64px",
+            "margin-mobile": "16px",
+            "container-max": "1200px"
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased overflow-x-hidden selection:bg-tertiary selection:text-on-tertiary">
+
+  <!-- Top Navigation Bar -->
+  <header id="navbar" class="fixed top-0 w-full z-50 glass-nav border-b border-secondary-container/20 transition-transform duration-300">
+    <div class="flex flex-row-reverse justify-between items-center w-full px-4 md:px-margin-desktop max-w-container-max mx-auto h-20">
+      
+      <a href="index.html" class="flex items-center gap-2 group">
+        <span class="text-xl md:text-2xl font-bold text-on-surface group-hover:text-tertiary transition-colors tracking-tight font-heading">
+          Tak Luxe Grooming
+        </span>
+      </a>
+
+      <nav aria-label="Main Navigation" class="hidden lg:flex flex-row-reverse items-center gap-6 xl:gap-8">
+        <a href="index.html" class="nav-link text-on-surface-variant text-sm hover:text-tertiary transition-colors py-1">صفحه اصلی</a>
+        <a href="index.html#services" class="nav-link text-on-surface-variant text-sm hover:text-tertiary transition-colors py-1">خدمات ویژه</a>
+        <a href="index.html#booking" class="nav-link text-on-surface-variant text-sm hover:text-tertiary transition-colors py-1">رزرو نوبت</a>
+        <a href="index.html#gallery" class="nav-link text-on-surface-variant text-sm hover:text-tertiary transition-colors py-1">گالری</a>
+        <a href="products.html" class="nav-link text-on-surface-variant text-sm hover:text-tertiary transition-colors py-1">محصولات</a>
+        <a href="about.html" class="nav-link active text-sm hover:text-tertiary transition-colors py-1">درباره ما</a>
+        <a href="contact.html" class="nav-link text-on-surface-variant text-sm hover:text-tertiary transition-colors py-1">تماس</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button data-action="open-cart" class="relative p-2.5 rounded-DEFAULT text-on-surface hover:text-tertiary hover:bg-surface-container transition-all" aria-label="سبد سفارش">
+          <span class="material-symbols-outlined text-2xl">shopping_bag</span>
+          <span class="cart-count-badge hidden absolute -top-1 -right-1 bg-tertiary text-primary-container text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">۰</span>
+        </button>
+
+        <a href="index.html#booking" class="hidden sm:inline-flex items-center justify-center bg-tertiary text-on-tertiary px-5 py-2.5 rounded-DEFAULT text-sm font-bold hover:brightness-110 gold-glow">
+          رزرو نوبت
+        </a>
+
+        <button data-action="toggle-mobile-menu" class="lg:hidden text-on-surface hover:text-tertiary p-2" aria-label="منو">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-backdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[90] hidden"></div>
+  <aside id="mobile-drawer" class="fixed top-0 right-0 bottom-0 w-72 bg-surface-container-high border-l border-secondary-container/30 z-[95] transform translate-x-full transition-transform duration-300 flex flex-col p-6">
+    <div class="flex justify-between items-center pb-6 border-b border-secondary-container/20">
+      <span class="font-bold text-lg text-tertiary">Tak Luxe Grooming</span>
+      <button id="close-mobile-menu" class="text-on-surface-variant hover:text-on-surface p-1">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-4 mt-6">
+      <a href="index.html" class="text-on-surface-variant hover:text-tertiary text-base py-2 pr-3">صفحه اصلی</a>
+      <a href="index.html#services" class="text-on-surface-variant hover:text-tertiary text-base py-2 pr-3">خدمات ویژه</a>
+      <a href="index.html#booking" class="text-on-surface-variant hover:text-tertiary text-base py-2 pr-3">رزرو نوبت</a>
+      <a href="index.html#gallery" class="text-on-surface-variant hover:text-tertiary text-base py-2 pr-3">گالری</a>
+      <a href="products.html" class="text-on-surface-variant hover:text-tertiary text-base py-2 pr-3">محصولات</a>
+      <a href="about.html" class="text-tertiary font-bold text-base py-2 border-r-2 border-tertiary pr-3">درباره ما</a>
+      <a href="contact.html" class="text-on-surface-variant hover:text-tertiary text-base py-2 pr-3">تماس</a>
+    </nav>
+  </aside>
+
+  <!-- Cart Drawer -->
+  <div id="cart-backdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[105] hidden"></div>
+  <aside id="cart-drawer" class="cart-drawer">
+    <div class="p-5 border-b border-secondary-container/20 flex justify-between items-center bg-surface-container-high">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-tertiary">shopping_bag</span>
+        <h3 class="font-bold text-on-surface text-base">سبد سفارش محصولات</h3>
+      </div>
+      <button data-action="close-cart" class="text-on-surface-variant hover:text-on-surface p-1">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div id="cart-empty-state" class="flex-grow flex flex-col items-center justify-center p-6 text-center text-on-surface-variant">
+      <span class="material-symbols-outlined text-5xl text-secondary mb-3">production_quantity_limits</span>
+      <p class="text-base">سبد سفارش شما خالی است.</p>
+    </div>
+    <div id="cart-items-container" class="flex-grow overflow-y-auto p-4 space-y-3"></div>
+    <div id="cart-footer-container" class="p-5 border-t border-secondary-container/20 bg-surface-container-high hidden space-y-3">
+      <div class="flex justify-between items-center text-sm">
+        <span class="text-on-surface-variant">مبلغ کل:</span>
+        <span id="cart-total-amount" class="text-tertiary font-bold text-lg">۰ تومان</span>
+      </div>
+      <button id="btn-cart-telegram" class="w-full bg-tertiary text-primary-container font-bold py-3 px-4 rounded-DEFAULT text-sm flex items-center justify-center gap-2 gold-glow">
+        <span class="material-symbols-outlined text-lg">send</span>
+        <span>ثبت سفارش در تلگرام</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-grow pt-28 pb-16">
+    <div class="max-w-container-max mx-auto px-4 md:px-margin-desktop">
+
+      <!-- Story Hero -->
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-secondary-container/40 text-secondary text-xs mb-4">
+            <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+            <span>فلسفه «تک» در پیرایش مردانه</span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-bold font-heading text-on-surface mb-6 leading-tight">
+            اصالت، آرامش و <br><span class="text-tertiary">ظرافتی بی‌همتا</span>
+          </h1>
+          <p class="text-on-surface-variant text-base leading-relaxed mb-6">
+            آرایشگاه تک لوکس گرومینگ با هدف بازتعریف مفهوم پیرایش مردانه در سمنان پایه‌گذاری شد. باور ما این است که پیرایش تنها کوتاه کردن مو نیست؛ بلکه هنری از جنس هندسه چهره، روان‌شناسی آرامش و احترامی است که یک آقا به شخصیت و وقار خود هدیه می‌دهد.
+          </p>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-8">
+            در تک، شما با فضایی آرام، نورپردازی گرم و بدون همهمه‌های آزاردهنده سالن‌های معمولی روبه‌رو می‌شوید؛ مکانی که هر دقیقه آن با دقت و احترام به زمان ارزشمند شما سپری می‌گردد.
+          </p>
+          
+          <div class="grid grid-cols-3 gap-4 p-4 bg-surface-container rounded-xl border border-white/5 text-center">
+            <div>
+              <span class="block text-tertiary text-2xl font-bold mb-1">۱۴+</span>
+              <span class="text-xs text-on-surface-variant">سال تجربه تخصصی</span>
+            </div>
+            <div class="border-r border-l border-secondary-container/30">
+              <span class="block text-tertiary text-2xl font-bold mb-1">۱۰۰٪</span>
+              <span class="text-xs text-on-surface-variant">ضدعفونی استریل</span>
+            </div>
+            <div>
+              <span class="block text-tertiary text-2xl font-bold mb-1">۴.۹</span>
+              <span class="text-xs text-on-surface-variant">رضایت مراجعین</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl overflow-hidden h-[420px] lg:h-[500px] ambient-shadow border border-secondary-container/20 group">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6dxNcXtHDL3fhf4ROqBfWNQuRH31WfxOTGifwcUj4mLCFFmS_Zq1z6d8sSAcvNxSgc7Vn1wDdisDBSQMijJYyRV_rz3zWNHuSOYbF0adEt2kpIghLoPrOH5gU_9z3tNGB1oD5WMxYX2OAjp7T-IbEGi_WMlPUOcccPLGYEtYdfR98XSwIbS7hFRlmsBCeEo-EQIT8rTvB8F0vJ4tB-ywdrPZRT2-v_gEUh3y9lbLQ8r_e-JTVXmYGPQ" 
+               alt="دکوراسیون لوکس آرایشگاه تک" 
+               class="w-full h-full object-cover grayscale-hover">
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-5 right-5 left-5 p-4 bg-surface-container-high/90 backdrop-blur-md rounded-lg border border-white/10">
+            <h4 class="font-bold text-sm text-tertiary mb-1">طراحی مینیمال و آرامش‌بخش</h4>
+            <p class="text-xs text-on-surface-variant">صندلی‌های ارگونومیک، موسیقی ملایم و تهویه استاندارد بیمارستانی</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAK Divider -->
+      <div class="tak-divider">
+        <div class="tak-divider-line"></div>
+        <span class="tak-divider-text">TAK</span>
+        <div class="tak-divider-line"></div>
+      </div>
+
+      <!-- Core Values -->
+      <section class="py-12">
+        <header class="text-center mb-12">
+          <h2 class="text-3xl font-bold font-heading text-on-surface mb-3">استانداردهای آرایشگاه تک</h2>
+          <p class="text-on-surface-variant text-sm max-w-xl mx-auto leading-relaxed">تعهداتی که هیچ‌گاه از آن‌ها کوتاه نمی‌آییم تا خیالتان از هر نظر آسوده باشد.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div class="bg-surface-container p-6 rounded-xl border border-white/5 hover:border-tertiary/30 transition-all ambient-shadow">
+            <span class="material-symbols-outlined text-tertiary text-3xl mb-4">straighten</span>
+            <h3 class="text-base font-bold text-on-surface mb-2">دقت میلی‌متری</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">هر کوتاهی بر اساس خطوط جمجمه و فرم چهره با نهایت ظرافت طراحی می‌شود.</p>
+          </div>
+
+          <div class="bg-surface-container p-6 rounded-xl border border-white/5 hover:border-tertiary/30 transition-all ambient-shadow">
+            <span class="material-symbols-outlined text-tertiary text-3xl mb-4">sanitizer</span>
+            <h3 class="text-base font-bold text-on-surface mb-2">استریل در اتوکلاو</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">کلیه ابزار فلزی پس از هر مشتری در دستگاه اتوکلاو پزشکی کاملاً استریل می‌شوند.</p>
+          </div>
+
+          <div class="bg-surface-container p-6 rounded-xl border border-white/5 hover:border-tertiary/30 transition-all ambient-shadow">
+            <span class="material-symbols-outlined text-tertiary text-3xl mb-4">spa</span>
+            <h3 class="text-base font-bold text-on-surface mb-2">محصولات ارگانیک</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">استفاده اختصاصی از شامپوها، سرم‌ها و وکس‌های بدون پارابن و الکل صنعتی.</p>
+          </div>
+
+          <div class="bg-surface-container p-6 rounded-xl border border-white/5 hover:border-tertiary/30 transition-all ambient-shadow">
+            <span class="material-symbols-outlined text-tertiary text-3xl mb-4">lock</span>
+            <h3 class="text-base font-bold text-on-surface mb-2">حریم خصوصی VIP</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">عدم تداخل نوبت‌ها، اختصاص تایم کافی و پذیرایی در خور شأن مهمانان گرامی.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Members Section -->
+      <section class="py-12 border-t border-secondary-container/20">
+        <header class="text-center md:text-right mb-10">
+          <div class="flex items-center justify-center md:justify-start gap-2 text-secondary text-xs font-bold mb-2">
+            <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+            <span>استادکاران و متخصصان ما</span>
+          </div>
+          <h2 class="text-3xl font-bold font-heading text-on-surface mb-3">تیم پیرایش و مراقبت تک</h2>
+          <p class="text-on-surface-variant text-sm max-w-2xl leading-relaxed">
+            متخصصانی با سال‌ها تجربه عملی و گذراندن دوره‌های آکادمیک بین‌المللی آماده ارائه خدماتی بی‌نقص به شما هستند.
+          </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Master 1 -->
+          <div class="bg-surface-container rounded-xl overflow-hidden border border-white/5 ambient-shadow group">
+            <div class="h-72 overflow-hidden bg-surface-container-high relative">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=80" 
+                   alt="استاد احسان شریفی" 
+                   class="w-full h-full object-cover grayscale-hover">
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent opacity-80"></div>
+            </div>
+            <div class="p-6 text-right">
+              <h3 class="text-lg font-bold text-tertiary mb-1">استاد احسان شریفی</h3>
+              <span class="text-xs text-secondary font-semibold block mb-3">مدیر و طراح ارشد استایل</span>
+              <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+                با بیش از ۱۴ سال سابقه در استایل‌های کلاسیک و ژورنالی، مدرس تکنیک‌های فید و هندسه استایل چهره.
+              </p>
+              <a href="index.html#booking" class="text-xs text-tertiary hover:underline flex items-center gap-1 font-bold">
+                <span>رزرو نوبت با استاد شریفی</span>
+                <span class="material-symbols-outlined text-sm">arrow_back</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Master 2 -->
+          <div class="bg-surface-container rounded-xl overflow-hidden border border-white/5 ambient-shadow group">
+            <div class="h-72 overflow-hidden bg-surface-container-high relative">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&auto=format&fit=crop&q=80" 
+                   alt="امید کاظمی" 
+                   class="w-full h-full object-cover grayscale-hover">
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent opacity-80"></div>
+            </div>
+            <div class="p-6 text-right">
+              <h3 class="text-lg font-bold text-tertiary mb-1">امید کاظمی</h3>
+              <span class="text-xs text-secondary font-semibold block mb-3">متخصص فیدهای مدرن و تکسچر مو</span>
+              <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+                تخصص در اجرای اسکین فیدهای میلی‌متری، براشینگ بافت‌دار و استایل‌های ترند جهانی با ماندگاری بالا.
+              </p>
+              <a href="index.html#booking" class="text-xs text-tertiary hover:underline flex items-center gap-1 font-bold">
+                <span>رزرو نوبت با امید کاظمی</span>
+                <span class="material-symbols-outlined text-sm">arrow_back</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Master 3 -->
+          <div class="bg-surface-container rounded-xl overflow-hidden border border-white/5 ambient-shadow group">
+            <div class="h-72 overflow-hidden bg-surface-container-high relative">
+              <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=600&auto=format&fit=crop&q=80" 
+                   alt="سهراب راد" 
+                   class="w-full h-full object-cover grayscale-hover">
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent opacity-80"></div>
+            </div>
+            <div class="p-6 text-right">
+              <h3 class="text-lg font-bold text-tertiary mb-1">سهراب راد</h3>
+              <span class="text-xs text-secondary font-semibold block mb-3">متخصص پوست، اسپا و پیرایش ریش</span>
+              <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+                کارشناس پاکسازی پوست با دستگاه هیدروفیشیال، لایه‌برداری ارگانیک، ماساژ صورت و قرینه‌سازی ریش.
+              </p>
+              <a href="index.html#booking" class="text-xs text-tertiary hover:underline flex items-center gap-1 font-bold">
+                <span>رزرو نوبت با سهراب راد</span>
+                <span class="material-symbols-outlined text-sm">arrow_back</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Bottom Banner -->
+      <div class="mt-12 p-8 bg-surface-container-high rounded-xl border border-secondary-container/30 text-center max-w-2xl mx-auto">
+        <h3 class="text-xl font-bold font-heading text-on-surface mb-2">آماده تجربه سطحی نوین از آراستگی هستید؟</h3>
+        <p class="text-xs text-on-surface-variant mb-6 leading-relaxed">
+          برای مشاوره رایگان با متخصصان ما یا رزرو سانس اختصاصی می‌توانید به صورت آنلاین یا در تلگرام با ما در ارتباط باشید.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="index.html#booking" class="bg-tertiary text-primary-container px-6 py-3 rounded font-bold text-xs gold-glow">
+            رزرو آنلاین نوبت
+          </a>
+          <a href="https://t.me/TakLuxeGrooming" target="_blank" class="bg-surface-container border border-secondary-container/40 text-on-surface px-6 py-3 rounded text-xs hover:border-tertiary transition-colors flex items-center justify-center gap-1.5">
+            <span class="material-symbols-outlined text-sm">send</span>
+            <span>ارتباط در تلگرام</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full border-t border-secondary-container/30 bg-surface-container-lowest mt-auto">
+    <div class="flex flex-col md:flex-row-reverse justify-between items-start w-full px-4 md:px-margin-desktop py-8 max-w-container-max mx-auto gap-8">
+      <div class="flex flex-col gap-2">
+        <span class="text-xl font-bold font-heading text-on-surface">Tak Luxe Grooming</span>
+        <p class="text-xs text-on-surface-variant max-w-xs">
+          مقصدی برای آقایانی که به دنبال دقت، اصالت و لوکس بودن هستند.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-x-8 gap-y-4 text-xs font-semibold">
+        <a class="text-on-surface-variant hover:text-tertiary transition-colors" href="index.html">صفحه اصلی</a>
+        <a class="text-on-surface-variant hover:text-tertiary transition-colors" href="index.html#booking">رزرو نوبت</a>
+        <a class="text-on-surface-variant hover:text-tertiary transition-colors" href="products.html">محصولات</a>
+        <a class="text-on-surface-variant hover:text-tertiary transition-colors" href="contact.html">تماس با ما</a>
+        <a class="text-on-surface-variant hover:text-tertiary transition-colors" href="https://t.me/TakLuxeGrooming" target="_blank">تلگرام</a>
+      </div>
+
+      <div class="text-on-surface-variant text-xs text-right md:text-left">
+        © ۲۰۲۴ تک لوکس گرومینگ. تمامی حقوق محفوظ است.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
